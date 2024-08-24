@@ -1,7 +1,7 @@
 # Calorify
 
 <p align="center">
-  <img src="https://github.com/rubenreh/Hand-Hero/blob/main/HandHeroLogo.png?raw=true" alt="Hand Hero Logo">
+  <img src="[https://github.com/rubenreh/Hand-Hero/blob/main/HandHeroLogo.png?raw=true](https://github.com/rubenreh/Calorify/blob/main/calorifyV1.png?raw=true)" alt="Calorify Logo">
 </p>
 
 **Calorify** is an innovative C++ project that integrates OpenCV for food object recognition, user input for personalized health metrics, and ChatGPT for determining food macros. This project is still in progress, and the following sections outline its functionality and future plans.
