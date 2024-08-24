@@ -25,31 +25,6 @@
 5. **Testing & Optimization**: Test the application for accuracy in recognition and macro calculation, and optimize the codebase.
 6. **Future Enhancements**: Consider expanding functionality to include more foods, enhance the user interface, and potentially introduce machine learning for more accurate food recognition.
 
-Calorify/
-│
-├── include/
-│   ├── Calorify.hpp
-│   ├── User.hpp
-│   ├── FoodScanner.hpp
-│
-├── src/
-│   ├── main.cpp
-│   ├── Calorify.cpp
-│   ├── User.cpp
-│   ├── FoodScanner.cpp
-│
-├── chatgpt/
-│   └── ChatGPTClient.hpp
-│   └── ChatGPTClient.cpp
-│
-├── data/
-│   ├── food_model.onnx  # Pretrained model for food recognition
-│
-├── lib/
-│   └── OpenCV (Include OpenCV libraries here)
-│
-└── CMakeLists.txt
-
 ## Current Status
 
 The project is in its early development stages. The current focus is on building the core functionality, with a working prototype expected soon. Contributions and feedback are welcome as development progresses.
