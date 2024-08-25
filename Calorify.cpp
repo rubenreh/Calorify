@@ -1,16 +1,21 @@
 #include "Calorify.hpp"
 #include <iostream>
 
-void Calorify::run() {
-    user.setUserInfo();
-    std::string food = scanner.scanFood();
-    std::string macros = chatGPT.getFoodMacros(food);
-    std::cout << "Macros for " << food << ": " << macros << std::endl;
-    calculateMacros();
+// Constructor: Initializes Calorify with a given database path
+Calorify::Calorify(const std::string& databasePath) 
+    : databaseManager(databasePath), 
+      currentUserProfile("defaultUser"), 
+      macroCalculator(0), 
+      chatGPTClient(), 
+      foodScanner() {
+    currentUserProfile.loadProfile();
 }
 
-void Calorify::calculateMacros() {
-    double calories = user.getCaloriesToMaintain();
-    std::cout << "Calories to maintain weight: " << calories << std::endl;
-    // Add more logic for gaining/losing weight
-}
+// Main loop of the application
+void Calorify::run() {
+    // Scan food and get its name
+    std::string scannedFood = foodScanner.scanFood();
+    std::string macros;
+    
+    // Check if the macros for the scanned food are already in the map
+    if (!food
