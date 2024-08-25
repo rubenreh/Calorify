@@ -1,34 +1,58 @@
-# Calorify
+# **Calorify**
 
-<p align="center">
-  <img src="https://github.com/rubenreh/Calorify/blob/main/calorifyV1.png?raw=true" alt="Hand Hero Logo">
-</p>
+**Calorify** is a comprehensive application designed to help users manage their dietary intake by leveraging advanced techniques in data structures and algorithms. This project integrates computer vision, data analysis, and personalized nutrition recommendations to offer a robust tool for tracking and optimizing nutritional intake.
 
-**Calorify** is an innovative C++ project that integrates OpenCV for food object recognition, user input for personalized health metrics, and ChatGPT for determining food macros. This project is still in progress, and the following sections outline its functionality and future plans.
+## **Features**
 
-## Functionality
+- **Food Scanning**: Utilizes OpenCV and object recognition to identify various foods.
+- **Nutritional Information**: Integrates with ChatGPT to retrieve macronutrient data for scanned foods.
+- **Personalized Recommendations**: Calculates and displays daily calorie and macronutrient needs based on user profile data.
+- **Dynamic Data Structures**: Employs Trie, HashMap, and Binary Search Tree for efficient data management and retrieval.
 
-- **Food Object Recognition**: Use OpenCV to scan and recognize various foods. Currently, this functionality is being developed with a focus on identifying common foods such as chicken, beef, and fruits.
+## **Data Structures and Algorithms**
 
-- **User Health Metrics Input**: Users can input their age, height, weight, and gender. This information will be used to calculate their daily caloric and macronutrient needs for various goals (e.g., maintain, lose, or gain weight).
+### **Trie**
+- **Purpose**: Efficiently manage and search for food items and their nutritional information.
+- **Functions**:
+  - `insert(const std::string& word)`: Adds a new word to the Trie.
+  - `search(const std::string& word)`: Checks if a word exists in the Trie.
+  - `startsWith(const std::string& prefix)`: Checks if any word starts with the given prefix.
+- **File**: `src/Trie.cpp`
 
-- **Macro Calculation**: Integrate with ChatGPT to determine the nutritional content of the recognized foods. This feature will fetch data such as calories, protein, carbs, fats, and sugar for each food item.
+### **HashMap**
+- **Purpose**: Stores and retrieves macronutrient data associated with food items.
+- **Functions**:
+  - `insert(const std::string& key, const std::string& value)`: Inserts a key-value pair into the HashMap.
+  - `get(const std::string& key, std::string& value)`: Retrieves the value for a given key.
+- **File**: `src/HashMap.cpp`
 
-- **Personalized Nutrition Plan**: Based on the user’s input and scanned food items, Calorify will provide daily caloric and macronutrient recommendations tailored to the user's goals.
+### **Binary Search Tree (BST)**
+- **Purpose**: Manage and search for user profile data efficiently.
+- **Functions**:
+  - `insert(const KeyType& key, const ValueType& value)`: Inserts a key-value pair into the BST.
+  - `find(const KeyType& key, ValueType& value)`: Finds the value associated with a key.
+  - `remove(const KeyType& key)`: Removes a key-value pair from the BST.
+- **File**: `src/BinarySearchTree.cpp`
 
-## Project Plan
+## **Core Components**
 
-1. **Basic Object Recognition**: Implement basic object recognition using OpenCV to identify common food items.
-2. **User Interface for Input**: Develop a simple CLI for users to input their health metrics and food mass (if applicable).
-3. **ChatGPT Integration**: Connect with the ChatGPT API to retrieve nutritional information for recognized foods.
-4. **Macro Calculation Logic**: Create algorithms to calculate and recommend daily macros based on user input and goals.
-5. **Testing & Optimization**: Test the application for accuracy in recognition and macro calculation, and optimize the codebase.
-6. **Future Enhancements**: Consider expanding functionality to include more foods, enhance the user interface, and potentially introduce machine learning for more accurate food recognition.
+### **Food Scanning**
+- **Libraries**: OpenCV
+- **Purpose**: Scans and identifies food items from images.
+- **How it Works**: Uses object recognition algorithms to identify food items and retrieves their nutritional information.
 
-## Current Status
+### **ChatGPT Integration**
+- **Purpose**: Retrieves macronutrient data for identified foods.
+- **How it Works**: Queries the ChatGPT client for detailed macronutrient information when the food item is not found in the local database.
 
-The project is in its early development stages. The current focus is on building the core functionality, with a working prototype expected soon. Contributions and feedback are welcome as development progresses.
+### **Nutritional Calculation**
+- **Purpose**: Calculates daily calorie and macronutrient needs based on user inputs.
+- **Inputs**: Height, weight, age, gender, and dietary goals (bulk, cut, maintain).
+- **Outputs**: Provides personalized recommendations for protein, carbohydrates, fats, and other nutrients.
 
----
 
-Stay tuned for more updates and features as Calorify evolves into a comprehensive nutrition management tool!
+## **Usage**
+
+1. **Scan Food**: Use the application to scan food items. The system will identify the food and retrieve nutritional information.
+2. **Input User Profile**: Enter your height, weight, age, gender, and dietary goals.
+3. **View Recommendations**: The application will provide personalized calorie and macronutrient recommendations based on your profile and goals.
