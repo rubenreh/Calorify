@@ -18,4 +18,26 @@ void Calorify::run() {
     std::string macros;
     
     // Check if the macros for the scanned food are already in the map
-    if (!food
+    if (!foodMacroMap.get(scannedFood, macros)) {
+        // If not, query the ChatGPT client
+        macros = chatGPTClient.queryMacros(scannedFood);
+        foodMacroMap.insert(scannedFood, macros); // Store the retrieved macros in the map
+    }
+
+    // Display the retrieved macros
+    std::cout << "Macros for " << scannedFood << ": " << macros << std::endl;
+
+    // Calculate and display the optimal macros based on user input and profile
+    calculateAndDisplayMacros();
+}
+
+// Calculate and display macros based on user input and profile
+void Calorify::calculateAndDisplayMacros() {
+    macroCalculator.setDietPlan(currentUserProfile.getDietPlan());
+    macroCalculator.calculateOptimalMacros();
+
+    // Display the calculated macros
+    std::cout << "Optimal Macros - Protein: " << macroCalculator.getProteinAmount()
+              << ", Carbs: " << macroCalculator.getCarbsAmount()
+              << ", Fats: " << macroCalculator.getFatsAmount() << std::endl;
+}
