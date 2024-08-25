@@ -1,7 +1,7 @@
 # **Calorify**
 
 <p align="center">
-  <img src="https://github.com/rubenreh/Calorify/blob/main/calorifyV2.png?raw=true" alt="Hand Hero Logo">
+  <img src="https://github.com/rubenreh/Calorify/blob/main/calorify6.png?raw=true" alt="Hand Hero Logo">
 </p>
 
 **Calorify** is a comprehensive application designed to help users manage their dietary intake by leveraging advanced techniques in data structures and algorithms. This project integrates computer vision, data analysis, and personalized nutrition recommendations to offer a robust tool for tracking and optimizing nutritional intake.
